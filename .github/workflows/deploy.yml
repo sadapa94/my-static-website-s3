@@ -1,4 +1,4 @@
-name: Upload Website
+use this yaml code name: Upload Website
 
 on:
   push:
@@ -9,9 +9,8 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-    - name: S3 Sync
     - uses: actions/checkout@master
-    - uses: jakejarvis/s3-sync-action@v0.5.1
+    - uses: jakejarvis/s3-sync-action@master
       with:
         args: --acl public-read --follow-symlinks --delete
       env:
